@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Matthew Tardiff <mattrix@gmail.com>
+MAINTAINER Nikita Grishko <gr1n@protonmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -13,7 +13,6 @@ ENV LANG en_US.UTF-8
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git ca-certificates && \
         git clone https://github.com/yyuu/pyenv.git .pyenv && \
-        (cd .pyenv && git checkout v1.0.6) && \
     apt-get purge -y --auto-remove git ca-certificates && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
